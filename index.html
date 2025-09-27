@@ -74,8 +74,8 @@
         <h1>Puzolana de vidrio (GGP) para hormigón en Chile</h1>
         <p>Reemplaza 15–25% de cemento. Menor <span class="ok">penetración de agua</span>, mejor durabilidad a cloruros, suministro estable ♻️. Validación local con ensayos NCh170.</p>
         <div class="btns">
-          <a class="btn primary" href="https://forms.gle/XXXXXXXXXXXXXXX" target="_blank" rel="noopener">Quiero ficha + muestra</a>
-          <a class="btn secondary" href="https://wa.me/569XXXXXXXX" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+          <a id="cta-form" class="btn primary" href="https://forms.gle/TU_FORM" target="_blank" rel="noopener">Quiero ficha + muestra</a>
+<a id="cta-wa"   class="btn secondary" href="https://wa.me/56992367449" target="_blank" rel="noopener">Hablar por WhatsApp</a>
         </div>
         <ul>
           <li>Ruta por desempeño NCh170 (penetración de agua)</li>
@@ -112,5 +112,33 @@
       © puzolana.cl — Producto para uso industrial. La información aquí no sustituye la especificación de proyecto. Ensayos locales requeridos.
     </footer>
   </div>
+  <script>
+  // Evento al 75% de scroll (interés)
+  (function() {
+    let fired = false;
+    window.addEventListener('scroll', function() {
+      if (!fired && (window.scrollY + window.innerHeight) / document.body.scrollHeight >= 0.75) {
+        fired = true;
+        gtag('event', 'scroll_75', {event_category:'engagement'});
+      }
+    });
+  })();
+
+  // Clic en CTA: Formulario (lead)
+  document.getElementById('cta-form')?.addEventListener('click', function(){
+    // Evento recomendado GA4
+    gtag('event', 'generate_lead', {method:'google_form'});
+    // Evento personalizado (por si quieres verlo separado)
+    gtag('event', 'lead_form_click', {event_category:'lead', event_label:'google_form'});
+  });
+
+  // Clic en CTA: WhatsApp (contacto)
+  document.getElementById('cta-wa')?.addEventListener('click', function(){
+    // Evento recomendado GA4
+    gtag('event', 'contact', {method:'whatsapp'});
+    // Evento personalizado
+    gtag('event', 'whatsapp_click', {event_category:'lead', event_label:'whatsapp'});
+  });
+</script>
 </body>
 </html>
