@@ -10,16 +10,26 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://puzolana.cl/">
   <link rel="canonical" href="https://puzolana.cl/">
+
+  <!-- Favicon / Icons -->
+  <link rel="icon" href="/assets/icon-ggp-chile.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon-ggp-chile.png" sizes="180x180">
+  <meta property="og:image" content="https://puzolana.cl/assets/icon-ggp-chile.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <meta name="robots" content="index,follow">
+
   <style>
     :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --accent2:#60a5fa; }
     * { box-sizing: border-box; }
     html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
     .wrap { max-width: 1000px; margin: 0 auto; padding: 24px; }
     header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding: 12px 0; }
-    .brand { font-weight:700; letter-spacing:.2px; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px; }
+    .logo { height:28px; width:auto; display:block; }
     .pill { font-size:12px; color:var(--muted); border:1px solid #1f2937; border-radius:999px; padding:6px 10px; }
     .hero { display:grid; grid-template-columns: 1.1fr 0.9fr; gap:32px; align-items:center; padding: 40px 0; }
     .hero h1 { font-size: clamp(28px, 4.5vw, 46px); line-height:1.1; margin:0 0 12px 0; }
@@ -54,6 +64,8 @@
     .copybtn:hover svg path{ fill:#e5e7eb; }
     .copybtn.is-ok{ border-color:#86efac; box-shadow:0 0 0 2px rgba(134,239,172,.2) inset; }
     .copied{ color:#86efac; font-size:12px; }
+
+    @media (max-width:520px){ .logo{ height:24px; } }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -79,13 +91,14 @@
   }
   </script>
 
-  <!-- JSON-LD Organization con email -->
+  <!-- JSON-LD Organization con logo -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
     "name":"GGP Chile",
     "url":"https://puzolana.cl/",
+    "logo":"https://puzolana.cl/assets/logo-ggp-chile.png",
     "contactPoint":[{
       "@type":"ContactPoint",
       "contactType":"sales",
@@ -99,7 +112,10 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">GGP Chile</div>
+      <div class="brand">
+        <img src="/assets/logo-ggp-chile.png" alt="GGP Chile" class="logo">
+        <span>GGP Chile</span>
+      </div>
       <div class="pill">ASTM C1866 • NCh170 por desempeño</div>
     </header>
 
@@ -114,7 +130,7 @@
           <a id="cta-ficha" class="btn secondary"
              href="/docs/ficha-tecnica-ggp-astm-c1866-v1.pdf"
              target="_blank" rel="noopener" download>
-            Ficha técnica (PDF)
+            Ver ficha técnica (PDF)
           </a>
         </div>
 
@@ -124,7 +140,6 @@
           Contáctanos a:
           <a id="cta-email-text" href="mailto:contacto@puzolana.cl">contacto@puzolana.cl</a>
           <button id="copy-email" class="copybtn" type="button" aria-label="Copiar correo" title="Copiar correo">
-            <!-- ícono 'copy' -->
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
               <path d="M16 1H6a2 2 0 0 0-2 2v10h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 15H10V7h9v13z"/>
             </svg>
@@ -155,7 +170,7 @@
     </section>
 
     <footer>
-      © puzolana.cl — Producto para uso industrial. 
+      © puzolana.cl — Producto para uso industrial.
     </footer>
   </div>
 
@@ -177,7 +192,7 @@
     gtag('event', 'lead_form_click', {event_category:'lead', event_label:'google_form'});
   });
 
-  // Clic en CTA: Ficha técnica (descarga/visualización de PDF)
+  // Clic en CTA: Ficha técnica (PDF)
   document.getElementById('cta-ficha')?.addEventListener('click', function(){
     gtag('event','file_download', {
       file_name: 'ficha-tecnica-ggp-astm-c1866-v1.pdf',
@@ -185,7 +200,7 @@
     });
   });
 
-  // Email visible (click) + Copiar (métricas + feedback visual)
+  // Email (click) + Copiar (feedback + GA4)
   document.getElementById('cta-email-text')?.addEventListener('click', function(){
     gtag('event', 'contact', {method:'email'});
     gtag('event', 'email_click', {event_category:'lead', event_label:'email_inline'});
