@@ -11,12 +11,10 @@
   <meta property="og:url" content="https://puzolana.cl/">
   <link rel="canonical" href="https://puzolana.cl/">
   <link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<meta name="robots" content="index,follow">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <meta name="robots" content="index,follow">
   <style>
-    :root {
-      --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --accent2:#60a5fa;
-    }
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --accent2:#60a5fa; }
     * { box-sizing: border-box; }
     html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
     .wrap { max-width: 1000px; margin: 0 auto; padding: 24px; }
@@ -36,14 +34,21 @@
     h2 { font-size: clamp(22px, 3.2vw, 28px); margin-top:36px; }
     ul { margin: 8px 0 0 18px; color: var(--muted); }
     footer { margin:40px 0 20px; color:var(--muted); font-size:12px; }
-    @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
     .badge { display:inline-flex; align-items:center; gap:8px; background:#0b1220; border:1px solid #1f2937; padding:8px 10px; border-radius:10px; font-size:12px; color:#a7f3d0; }
     .ok { color:#86efac; }
+
+    /* Bloque de contacto por email (resalta + copiar) */
+    .contact-callout{
+      margin-top:14px; background:#0b1220; border:1px solid #1f2937;
+      border-radius:12px; padding:12px 14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .contact-callout a { font-weight:700; color:#a7f3d0; text-decoration:underline; }
+    .copybtn{ background:#111827; color:#cbd5e1; border:1px solid #1f2937; border-radius:8px; padding:6px 10px; cursor:pointer; }
+    .copied{ color:#86efac; font-size:12px; }
   </style>
-  <!-- Google Analytics 4 (opcional: reemplaza G-XXXXXXXXXX por tu ID) -->
+
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7YQ7FZCNS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -51,6 +56,8 @@
     gtag('js', new Date());
     gtag('config', 'G-Q7YQ7FZCNS');
   </script>
+
+  <!-- JSON-LD Product -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -63,21 +70,23 @@
     "material":"Glass pozzolan (ASTM C1866)"
   }
   </script>
+
+  <!-- JSON-LD Organization con email -->
   <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"GGP Chile",
-  "url":"https://puzolana.cl/",
-  "contactPoint":[{
-    "@type":"ContactPoint",
-    "contactType":"sales",
-    "email":"contacto@puzolana.cl",
-    "areaServed":"CL",
-    "availableLanguage":["es"]
-  }]
-}
-</script>
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"GGP Chile",
+    "url":"https://puzolana.cl/",
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "contactType":"sales",
+      "email":"contacto@puzolana.cl",
+      "areaServed":"CL",
+      "availableLanguage":["es"]
+    }]
+  }
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -91,39 +100,38 @@
         <span class="badge">Alternativa a fly ash/escoria</span>
         <h1>Puzolana de vidrio (GGP) para hormigón en Chile</h1>
         <p>Reemplaza 15–25% de cemento. Menor <span class="ok">penetración de agua</span>, mejor durabilidad a cloruros, suministro estable ♻️. Validación local con ensayos NCh170.</p>
+
         <div class="btns">
           <a id="cta-form" class="btn primary" href="https://forms.gle/TU_FORM" target="_blank" rel="noopener">Quiero ficha + muestra</a>
-<a id="cta-email" class="btn secondary"
-   href="mailto:contacto@puzolana.cl?subject=Consulta%20GGP%20puzolana&body=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20GGP%20(ASTM%20C1866)%20para%20hormig%C3%B3n.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0AVolumen%20estimado%20(t%2Fmes)%3A%0A"
-   rel="noopener">Escríbenos por Email</a>
         </div>
+
+        <!-- Llamado de contacto (email visible + copiar) -->
+        <div class="contact-callout" role="note" aria-label="Contacto">
+          <strong>¿Cotizaciones / pilotos?</strong>
+          Contáctanos a:
+          <a id="cta-email-text" href="mailto:contacto@puzolana.cl">contacto@puzolana.cl</a>
+          <button id="copy-email" class="copybtn" type="button" aria-label="Copiar correo">Copiar</button>
+          <span id="copied" class="copied" aria-live="polite" hidden>¡Copiado!</span>
+        </div>
+
         <ul>
           <li>Ruta por desempeño NCh170 (penetración de agua)</li>
           <li>Cadena de suministro estable (vidrio reciclado)</li>
           <li>Compatible con plantas de hormigón (big-bag o silo)</li>
         </ul>
       </div>
+
       <div class="card">
         <h2>Beneficios técnicos rápidos</h2>
         <div class="grid">
-          <div class="item">
-            <strong>Durabilidad</strong>
-            <p>Menor permeabilidad y cloruros; opción ideal para obra costera/puertos.</p>
-          </div>
-          <div class="item">
-            <strong>Economía</strong>
-            <p>Posibilidad de costo-m³ ≤ a OPC si optimizas % de reemplazo y logística.</p>
-          </div>
-          <div class="item">
-            <strong>Compatibilidad</strong>
-            <p>Usable con superplastificantes PCE; trabajabilidad estable.</p>
-          </div>
+          <div class="item"><strong>Durabilidad</strong><p>Menor permeabilidad y cloruros; opción ideal para obra costera/puertos.</p></div>
+          <div class="item"><strong>Economía</strong><p>Posibilidad de costo-m³ ≤ a OPC si optimizas % de reemplazo y logística.</p></div>
+          <div class="item"><strong>Compatibilidad</strong><p>Usable con superplastificantes PCE; trabajabilidad estable.</p></div>
         </div>
-        <h2>Pruébalo!</h2>
+        <h2>¡Pruébalo!</h2>
         <ul>
           <li>Dosificaciones 15/20/25% con tu cemento local</li>
           <li>f’c 7/28d + <em>penetración de agua</em> (NCh170)</li>
-          
         </ul>
       </div>
     </section>
@@ -132,6 +140,7 @@
       © puzolana.cl — Producto para uso industrial. La información aquí no sustituye la especificación de proyecto. Ensayos locales requeridos.
     </footer>
   </div>
+
   <script>
   // Evento al 75% de scroll (interés)
   (function() {
@@ -146,19 +155,22 @@
 
   // Clic en CTA: Formulario (lead)
   document.getElementById('cta-form')?.addEventListener('click', function(){
-    // Evento recomendado GA4
     gtag('event', 'generate_lead', {method:'google_form'});
-    // Evento personalizado (por si quieres verlo separado)
     gtag('event', 'lead_form_click', {event_category:'lead', event_label:'google_form'});
   });
 
-  // Clic en CTA: WhatsApp (contacto)
-  document.getElementById('cta-wa')?.addEventListener('click', function(){
-    // Evento recomendado GA4
-    gtag('event', 'contact', {method:'whatsapp'});
-    // Evento personalizado
-    gtag('event', 'whatsapp_click', {event_category:'lead', event_label:'whatsapp'});
+  // Email visible (click) + Copiar (para Safari/desktop)
+  document.getElementById('cta-email-text')?.addEventListener('click', function(){
+    gtag('event', 'contact', {method:'email'});
+    gtag('event', 'email_click', {event_category:'lead', event_label:'email_inline'});
   });
-</script>
+
+  document.getElementById('copy-email')?.addEventListener('click', async function(){
+    try { await navigator.clipboard?.writeText('contacto@puzolana.cl'); } catch(e) {}
+    gtag('event', 'copy_email', {method:'copy_button'});
+    const ok = document.getElementById('copied');
+    if (ok) { ok.hidden = false; setTimeout(()=> ok.hidden = true, 1500); }
+  });
+  </script>
 </body>
 </html>
