@@ -105,23 +105,31 @@
   }
   </script>
 
-  <!-- JSON-LD Organization con logo -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"GGP Chile",
-    "url":"https://puzolana.cl/",
-    "logo":"https://puzolana.cl/assets/logo-ggp-chile.png",
-    "contactPoint":[{
-      "@type":"ContactPoint",
-      "contactType":"sales",
-      "email":"contacto@puzolana.cl",
-      "areaServed":"CL",
-      "availableLanguage":["es"]
-    }]
+ <!-- JSON-LD Product (corregido para rich results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Puzolana de vidrio para hormigón (GGP, ASTM C1866)",
+  "brand": { "@type": "Brand", "name": "GGP Chile" },
+  "description": "SCM circular para reemplazo de cemento (15–25%). Menor permeabilidad y penetración de agua (NCh170, ruta por desempeño).",
+  "url": "https://puzolana.cl/",
+  "image": ["https://puzolana.cl/assets/og-ggp.jpg"],
+  "material": "Glass pozzolan (ASTM C1866)",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Hormigoneras, Prefabricado, Infraestructura costera/minera"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://puzolana.cl/",
+    "price": "1.00",
+    "priceCurrency": "CLP",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition"
   }
-  </script>
+}
+</script>
 </head>
 <body>
   <div class="wrap">
