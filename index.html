@@ -4,23 +4,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Puzolana de vidrio (GGP) ASTM C1866 | Chile</title>
-  <meta name="description" content="GGP: puzolana de vidrio para hormigón. Alternativa a fly ash/escoria. Cumple por desempeño NCh170 (menor penetración de agua). Ensayos locales.">
-  <meta property="og:title" content="Puzolana de vidrio (GGP) ASTM C1866 | Chile">
-  <meta property="og:description" content="Alternativa a fly ash/escoria. 15–25% reemplazo de cemento. Menor permeabilidad.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://puzolana.cl/">
+  <meta name="description" content="Puzolana de vidrio (GGP, ASTM C1866) para hormigón en Chile. SCM circular que reemplaza 15–25% de cemento. Ruta por desempeño NCh170 (menor penetración de agua). Ensayos locales.">
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://puzolana.cl/">
 
   <!-- Favicon / Icons -->
   <link rel="icon" href="/assets/icon-ggp-chile.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icon-ggp-chile.png" sizes="180x180">
-  <meta property="og:image" content="https://puzolana.cl/assets/icon-ggp-chile.png">
-  <meta property="og:image:width" content="512">
-  <meta property="og:image:height" content="512">
 
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Puzolana de vidrio (GGP) ASTM C1866 | Chile">
+  <meta property="og:description" content="Alternativa a fly ash/escoria. 15–25% de reemplazo de cemento. Menor permeabilidad (NCh170 por desempeño).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://puzolana.cl/">
+  <meta property="og:site_name" content="GGP Chile">
+  <meta property="og:image" content="https://puzolana.cl/assets/og-ggp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Performance hints -->
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <!-- Preload héroe en WebP para mejorar LCP -->
+  <link rel="preload" as="image" href="/assets/hero-ggp.webp" imagesrcset="/assets/hero-ggp.webp" imagesizes="100vw">
   <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0f172a">
 
   <style>
     :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --accent2:#60a5fa; }
@@ -31,9 +41,13 @@
     .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px; }
     .logo { height:28px; width:auto; display:block; }
     .pill { font-size:12px; color:var(--muted); border:1px solid #1f2937; border-radius:999px; padding:6px 10px; }
-    .hero { display:grid; grid-template-columns: 1.1fr 0.9fr; gap:32px; align-items:center; padding: 40px 0; }
+
+    /* Layout del héroe (dos columnas) */
+    .hero { display:grid; grid-template-columns: 1.05fr 0.95fr; gap:32px; align-items:center; padding: 40px 0; }
     .hero h1 { font-size: clamp(28px, 4.5vw, 46px); line-height:1.1; margin:0 0 12px 0; }
     .hero p { color:var(--muted); font-size: clamp(15px, 2.4vw, 18px); }
+    .right { display:grid; gap:16px; } /* apila imagen + tarjeta */
+
     .card { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00)); border:1px solid #1f2937; border-radius: 16px; padding: 20px; }
     .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
     a.btn { text-decoration:none; padding:12px 16px; border-radius:10px; border:1px solid #1f2937; font-weight:600; }
@@ -113,17 +127,18 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <img src="/assets/logo-ggp-chile.png" alt="GGP Chile" class="logo">
+        <img src="/assets/logo-ggp-chile.png" alt="GGP Chile" class="logo" width="112" height="28">
         <span>GGP Chile</span>
       </div>
       <div class="pill">ASTM C1866 • NCh170 por desempeño</div>
     </header>
 
     <section class="hero">
+      <!-- Columna izquierda -->
       <div>
         <span class="badge">Alternativa a fly ash/escoria</span>
         <h1>Puzolana de vidrio (GGP) para hormigón en Chile</h1>
-        <p>Reemplaza 15–25% de cemento. Menor <span class="ok">penetración de agua</span>, mejor durabilidad a cloruros, suministro estable ♻️. Para validación local con ensayos NCh170.</p>
+        <p>Reemplaza 15–25% de cemento. Menor <span class="ok">penetración de agua</span>, mejor durabilidad a cloruros y suministro estable ♻️. Validación local con ensayos NCh170.</p>
 
         <div class="btns">
           <a id="cta-form" class="btn primary" href="https://forms.gle/Xc1VTi3yyMuNx2Xt6" target="_blank" rel="noopener">Quiero ficha + muestra</a>
@@ -154,18 +169,33 @@
         </ul>
       </div>
 
-      <div class="card">
-        <h2>Beneficios técnicos rápidos</h2>
-        <div class="grid">
-          <div class="item"><strong>Durabilidad</strong><p>Menor permeabilidad y cloruros; opción ideal para obra costera/puertos.</p></div>
-          <div class="item"><strong>Economía</strong><p>Posibilidad de <b>costo-m³</b> ≤ a OPC si optimizas % de reemplazo y logística.</p></div>
-          <div class="item"><strong>Compatibilidad</strong><p>Usable con superplastificantes PCE; trabajabilidad estable.</p></div>
+      <!-- Columna derecha: imagen + tarjeta -->
+      <div class="right">
+        <figure class="hero-media">
+          <picture>
+            <source srcset="/assets/hero-ggp.webp" type="image/webp">
+            <img
+              src="/assets/hero-ggp.jpg"
+              width="1600" height="1000"
+              loading="eager" fetchpriority="high" decoding="async"
+              alt="Puzolana de vidrio (GGP) en material granular; vidrio reciclado para hormigón"
+              style="width:100%;height:auto;border-radius:16px;border:1px solid #1f2937;display:block;">
+          </picture>
+        </figure>
+
+        <div class="card">
+          <h2>Beneficios técnicos rápidos</h2>
+          <div class="grid">
+            <div class="item"><strong>Durabilidad</strong><p>Menor permeabilidad y cloruros; ideal para infraestructura costera o puertos.</p></div>
+            <div class="item"><strong>Economía</strong><p>Posibilidad de <b>costo-m³</b> ≤ a OPC al optimizar % de reemplazo y logística.</p></div>
+            <div class="item"><strong>Compatibilidad</strong><p>Funciona con superplastificantes PCE; trabajabilidad estable.</p></div>
+          </div>
+          <h2>¡Pruébalo!</h2>
+          <ul>
+            <li>Dosificaciones 15/20/25% con tu cemento local</li>
+            <li>f’c 7/28d + <em>penetración de agua</em> (NCh170)</li>
+          </ul>
         </div>
-        <h2>¡Pruébalo!</h2>
-        <ul>
-          <li>Dosificaciones 15/20/25% con tu cemento local</li>
-          <li>f’c 7/28d + <em>penetración de agua</em> (NCh170)</li>
-        </ul>
       </div>
     </section>
 
