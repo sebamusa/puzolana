@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home con imágenes asociadas -->
+  <url>
+    <loc>https://puzolana.cl/</loc>
+
+    <!-- Imagen principal del hero (usa JPG como URL principal) -->
+    <image:image>
+      <image:loc>https://puzolana.cl/assets/hero-ggp.jpg</image:loc>
+      <image:title>Puzolana de vidrio (GGP) para hormigón en Chile</image:title>
+      <image:caption>GGP (ASTM C1866) desde vidrio reciclado; menor penetración de agua (NCh170).</image:caption>
+    </image:image>
+
+    <!-- Logo (ayuda a descubribilidad de marca) -->
+    <image:image>
+      <image:loc>https://puzolana.cl/assets/logo-ggp-chile.png</image:loc>
+      <image:title>GGP Chile</image:title>
+    </image:image>
+  </url>
+
+</urlset>
