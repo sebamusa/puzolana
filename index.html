@@ -77,6 +77,50 @@
     .copied{ color:#86efac; font-size:12px; }
 
     @media (max-width:520px){ .logo{ height:24px; } }
+
+    /* ===== Nuevo layout de Beneficios (desktop mejorado, móvil intacto) ===== */
+    .benefits{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+      margin-top:14px;
+    }
+    @media (max-width:900px){ .benefits{ grid-template-columns: 1fr 1fr; } }
+    @media (max-width:600px){ .benefits{ grid-template-columns: 1fr; } }
+
+    .benefit-card{
+      position:relative;
+      padding:16px 16px 18px;
+      border-radius:14px;
+      background:#0b1220;
+      border:1px solid #1f2937;
+      overflow:hidden;
+      transition: transform .15s ease-out, box-shadow .15s ease-out;
+    }
+    .benefit-card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    .benefit-card::before{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius:14px;
+      background:linear-gradient(120deg, rgba(34,197,94,.28), rgba(96,165,250,.28));
+      opacity:0; transition:opacity .25s;
+    }
+    .benefit-card:hover::before{ opacity:.45; }
+
+    .benefit-card > *{ position:relative; z-index:1; }
+    .benefit-title{
+      display:flex; align-items:center; gap:8px;
+      font-weight:700;
+    }
+    .benefit-title .dot{
+      width:8px; height:8px; border-radius:50%; background:var(--accent);
+      box-shadow:0 0 0 3px rgba(34,197,94,.18);
+    }
+    .benefit-card p{ margin:.55rem 0 0; color:var(--muted); line-height:1.55; }
+    .sup{ font-size:.7em; vertical-align: super; }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -176,11 +220,26 @@
 
         <div class="card">
           <h2>Beneficios técnicos rápidos</h2>
-          <div class="grid">
-            <div class="item"><strong>Durabilidad</strong><p>Menor permeabilidad y cloruros; ideal para infraestructura costera o puertos.</p></div>
-            <div class="item"><strong>Economía</strong><p>Posibilidad de <b>costo-m³</b> ≤ a OPC al optimizar % de reemplazo y logística.</p></div>
-            <div class="item"><strong>Compatibilidad</strong><p>Funciona con superplastificantes PCE; trabajabilidad estable.</p></div>
+
+          <!-- NUEVO bloque de beneficios -->
+          <div class="benefits">
+            <article class="benefit-card">
+              <div class="benefit-title"><span class="dot"></span>Durabilidad</div>
+              <p>Menor permeabilidad y cloruros; ideal para infraestructura costera o puertos.</p>
+            </article>
+
+            <article class="benefit-card">
+              <div class="benefit-title"><span class="dot"></span>Economía</div>
+              <p>Posibilidad de costo-<span class="sup">m³</span> ≤ a OPC al optimizar % de reemplazo y logística.</p>
+            </article>
+
+            <article class="benefit-card">
+              <div class="benefit-title"><span class="dot"></span>Compatibilidad</div>
+              <p>Funciona con superplastificantes PCE; trabajabilidad estable.</p>
+            </article>
           </div>
+          <!-- /NUEVO bloque de beneficios -->
+
           <h2>¡Pruébalo!</h2>
           <ul>
             <li>Dosificaciones 15/20/25% con tu cemento local</li>
