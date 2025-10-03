@@ -79,48 +79,68 @@
     @media (max-width:520px){ .logo{ height:24px; } }
 
     /* ===== Nuevo layout de Beneficios (desktop mejorado, móvil intacto) ===== */
-    .benefits{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:18px;
-      margin-top:14px;
-    }
-    @media (max-width:900px){ .benefits{ grid-template-columns: 1fr 1fr; } }
-    @media (max-width:600px){ .benefits{ grid-template-columns: 1fr; } }
+.benefits{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;               /* un poco menos de separación */
+  margin-top:14px;
+}
+@media (max-width:900px){ .benefits{ grid-template-columns: 1fr 1fr; } }
+@media (max-width:600px){ .benefits{ grid-template-columns: 1fr; } }
 
-    .benefit-card{
-      position:relative;
-      padding:16px 16px 18px;
-      border-radius:14px;
-      background:#0b1220;
-      border:1px solid #1f2937;
-      overflow:hidden;
-      transition: transform .15s ease-out, box-shadow .15s ease-out;
-    }
-    .benefit-card:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,.25);
-    }
-    .benefit-card::before{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius:14px;
-      background:linear-gradient(120deg, rgba(34,197,94,.28), rgba(96,165,250,.28));
-      opacity:0; transition:opacity .25s;
-    }
-    .benefit-card:hover::before{ opacity:.45; }
+.benefit-card{
+  position:relative;
+  padding:16px 16px 18px;
+  border-radius:14px;
+  background:#0b1220;
+  border:1px solid #1f2937;
+  overflow:hidden;
+  transition: transform .15s ease-out, box-shadow .15s ease-out;
+}
+.benefit-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.benefit-card::before{
+  content:"";
+  position:absolute; inset:-1px;
+  border-radius:14px;
+  background:linear-gradient(120deg, rgba(34,197,94,.28), rgba(96,165,250,.28));
+  opacity:0; transition:opacity .25s;
+}
+.benefit-card:hover::before{ opacity:.45; }
+.benefit-card > *{ position:relative; z-index:1; }
 
-    .benefit-card > *{ position:relative; z-index:1; }
-    .benefit-title{
-      display:flex; align-items:center; gap:8px;
-      font-weight:700;
-    }
-    .benefit-title .dot{
-      width:8px; height:8px; border-radius:50%; background:var(--accent);
-      box-shadow:0 0 0 3px rgba(34,197,94,.18);
-    }
-    .benefit-card p{ margin:.55rem 0 0; color:var(--muted); line-height:1.55; }
-    .sup{ font-size:.7em; vertical-align: super; }
+/* — Tipografías más compactas — */
+.benefit-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:700;
+  font-size:0.98rem;              /* antes heredado (~1rem) */
+}
+.benefit-title .dot{
+  width:8px; height:8px; border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(34,197,94,.18);
+}
+.benefit-card p{
+  margin:.55rem 0 0;
+  color:var(--muted);
+  font-size:0.95rem;               /* ↓ tamaño del texto */
+  line-height:1.45;                /* más apretado para que quepa más */
+}
+
+/* Desktop chico (900–1120px): aún más compacto */
+@media (min-width:900px) and (max-width:1120px){
+  .benefit-title{ font-size:0.94rem; }
+  .benefit-card p{ font-size:0.90rem; line-height:1.42; }
+}
+
+/* Móvil: mantenemos buena legibilidad */
+@media (max-width:600px){
+  .benefit-title{ font-size:1rem; }
+  .benefit-card p{ font-size:1rem; line-height:1.55; }
+}
+
+.sup{ font-size:.7em; vertical-align: super; }
   </style>
 
   <!-- Google Analytics 4 -->
